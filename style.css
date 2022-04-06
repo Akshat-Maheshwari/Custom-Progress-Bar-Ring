@@ -1,0 +1,71 @@
+body{
+    background:#e3edf7;
+}
+.progressBar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:400px;
+}
+.progressBar .ring {
+    position: relative;
+}
+.progressBar .ring svg{
+    height: 200px;
+}
+.outer{
+    height: 160px;
+    width: 160px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+        -6px -6px 10px -1px rgba(255,255,255,0.7);
+    position: absolute;
+    top:0;
+    left:0;
+}
+.inner{
+    height: 120px;
+    width:120px;
+    position:absolute;
+    top:20px;
+    left:20px;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progressBar .ring svg circle{
+   fill:none;
+   stroke-width: 20; 
+   transform:translate(10px,10px);
+   stroke-dasharray:440;
+   stroke-dashoffset: 440;
+
+}
+.progressBar .ring svg circle:nth-child(2){
+    stroke-dashoffset:420;
+    stroke:url(#GradientColor);
+    /* stroke:azure; */
+    /* stroke:aquamarine; */
+    animation: anim 2s linear forwards;
+}
+.progressBar .ring .percentage{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color:#515151;
+}
+@keyframes anim {
+    100%{
+        stroke-dashoffset:0;
+    }
+    0%{
+        stroke-dasharray: 420;
+    }
+}

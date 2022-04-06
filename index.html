@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Loading Ring</title>
+</head>
+<body>
+    <div class="progressBar">
+            <div class="ring">
+                <svg>
+                    <defs>
+                        <linearGradient id="GradientColor">
+                           <stop offset="0%" stop-color="#e91e63" />
+                           <stop offset="100%" stop-color="#673ab7" />
+                        </linearGradient>
+                     </defs>
+                    <circle cx="70" cy="70" r="70" ></circle>
+                    <circle cx="70" cy="70" r="70" ></circle>
+                </svg>
+                <div class="outer">
+                    <div class="inner">
+                        <div class="percentage">10%</div>
+                    </div>
+                </div>   
+            </div>
+            
+        </div>
+    <script>
+        let percentage = document.querySelector(".percentage");
+        let counter=0;
+        setInterval(()=>{
+
+            counter==100?clearInterval():( counter++, percentage.innerHTML = counter + "%")
+        },20)
+    </script>
+</body>
+</html>
